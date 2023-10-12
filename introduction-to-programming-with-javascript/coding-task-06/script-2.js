@@ -13,15 +13,22 @@ Implement a charCount function.
 
 function charCount(string, seekChar) {
   // check if variable max. 1 character
+
   if (seekChar.length === 1) {
     // initalize the variable
-    let times = 0;
+    let counter = 0;
     // iterate each string character
-    for (let i = 0; i <= string.length - 1; i++) {
+    for (let i = 0; i < string.length; i++) {
       // use the method split, seek for the length of "seekChar" and subtract 1, because there is an additional Array element
-      times = string.split(seekChar).length - 1;
-      return times;
+      //times = string.split(seekChar).length - 1;
+
+      // use the comparison operator, if the same as the seekChar, count up
+      if (string[i] === seekChar) {
+        counter++;
+        //      count = string[i] + ", ";
+      }
     }
+    return counter;
   } else {
     return "Please use only one character";
   }
