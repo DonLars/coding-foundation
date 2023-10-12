@@ -17,7 +17,7 @@ function charCount(string, seekChar) {
     // initalize the variable
     let times = 0;
     // iterate each string character
-    for (let i = 0; i <= string.length; i++) {
+    for (let i = 0; i <= string.length - 1; i++) {
       // use the method split, seek for the length of "seekChar" and subtract 1, because there is an additional Array element
       times = string.split(seekChar).length - 1;
       return times;
