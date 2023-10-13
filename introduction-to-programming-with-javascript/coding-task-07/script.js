@@ -9,37 +9,35 @@ Implement a removeItem function.
  Ensure that the original array was not mutated.
 */
 
-const animals = ["Dog", "Cat", "Lion"];
-const fruits = ["Watermelon", "Banana", "Cherry", "Kiwi", "Pineapple", "Apple"];
+function removeItem(arr, index) {
+  if (index > 0 && index <= arr.length) {
+    // Use structuredClone for a deep copy
+    const arrDeepCopy = structuredClone(arr);
 
-console.log("original: " + animals);
-console.log("original: " + fruits);
-
-function removeItem(arr, num) {
-  if (num > 0) {
-    const arrCopy = structuredClone(arr);
-    arrCopy.shift(num);
+    // index - 1, because we want a non-zero-based index
+    arrDeepCopy.splice(index - 1, 1);
+    return arrDeepCopy;
   } else {
-    console.log("Please use with a positive number");
+    console.log("Please use a positive number");
   }
 }
 
 // TODO: Implement the removeItem function
 
+const animals = ["Dog", "Cat", "Lion"];
+const fruits = ["Watermelon", "Banana", "Cherry", "Kiwi", "Pineapple", "Apple"];
+
 console.log(removeItem(animals, 1));
 // result should be: ["Cat", "Lion"]
 
-//console.log(animals);
+console.log(animals);
 // result should be still: ["Dog", "Cat", "Lion"]
 
-/********
 console.log(removeItem(fruits, 3));
 // result should be: ["Watermelon", "Banana", "Kiwi", "Pineapple", "Apple"]
 
 console.log(fruits);
 // result should be still: ["Watermelon", "Banana", "Cherry", "Kiwi", "Pineapple", "Apple"]
-
-****** */
 
 /*
 /*    Start array exercises
