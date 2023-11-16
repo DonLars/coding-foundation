@@ -1,4 +1,5 @@
 "use strict";
+
 /*
 01) removeItem function
 Implement a removeItem function.
@@ -38,6 +39,62 @@ console.log(removeItem(fruits, 3));
 
 console.log(fruits);
 // result should be still: ["Watermelon", "Banana", "Cherry", "Kiwi", "Pineapple", "Apple"]
+
+/*
+03) sumOfCharacters function
+Implement a sumOfCharacters function.
+
+ The function has one parameter, which is an array.
+ Check the type of each array entry. If it's a string then store the count of characters.
+ The function returns the total sum of all characters.
+
+// TODO: Implement the sumOfCharacters function
+*/
+
+/* Try with for of loop /////////////////
+
+function sumOfCharacters(arr) {
+  console.log("Vor der Schleife: " + arr);
+  let count = 0;
+  for (let sumEntry of arr) {
+    console.log("In 1. Schleife: " + sumEntry);
+
+    for (let charEntry of sumEntry) {
+      //console.log(harEntry"In 2. Schleife: " + charEntry + " | Count: " + count);
+      count++;
+    }
+  }
+   return count;
+}
+*/
+function sumOfCharacters(arr) {
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    //console.log("In 1. Schleife: " + arr[i]);
+
+    for (let j = 0; j < arr[i].length; j++) {
+      if (typeof arr[i] === "string") {
+        count++;
+        //console.log("In 2. Schleife: " + arr[i][j] + " | Count: " + count);
+      }
+    }
+  }
+  return count;
+}
+
+const arr1 = ["Luke", "Anakin", true, "Obi Wan", 333];
+console.log(sumOfCharacters(arr1));
+// result should be: 17
+
+const arr2 = [
+  "Code is",
+  "like humor",
+  ".",
+  "When you have",
+  "to explain it, it's bad!",
+];
+console.log(sumOfCharacters(arr2));
+// result should be: 55
 
 /*
 /*    Start array exercises

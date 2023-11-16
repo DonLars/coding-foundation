@@ -1,52 +1,41 @@
-/*    Function 01
-========================================================================== */
+function sameCase(a, b) {
+  // If both characters are the same case, return 1
+  if (
+    (a === a.toUpperCase() && b === b.toUpperCase()) ||
+    (a === a.toLowerCase() && b === b.toLowerCase())
+  ) {
+    return 1;
 
-function welcomeMsg(name) {
-  return "Welcome " + name + "!";
+    // if both characters are letters, but not the same case, return 0
+  } else if (
+    (a === a.toLowerCase() && b === b.toUpperCase()) ||
+    (a === a.toUpperCase() && b === b.toLowerCase())
+  ) {
+    return 0;
+
+    // if either of the characters is not a letter, return -1
+  } else if (
+    (a === a.toLowerCase() && a !== a.toUpperCase()) ||
+    (a === a.toLowerCase() && a !== a.toUpperCase())
+  ) {
+    return -1;
+  }
 }
 
-// TODO: implement welcomeMsg function
+//* sdfsdf  */
 
-console.log(welcomeMsg("Jane"));
-// Welcome Jane!
-
-console.log(welcomeMsg("Marc"));
-// Welcome Marc!
-
-console.log(welcomeMsg("Lars"));
-// Welcome Lars!
-
-/*    Function 02
-========================================================================== */
-
-function calcGrossPrice(netPrice, taxRate) {
-  //return netPrice * (taxRate + 1); // round error?
-  return netPrice + netPrice * taxRate;
+function sameCase(a, b) {
+  if (
+    a.toUpperCase() === a.toLowerCase() ||
+    b.toLowerCase() === b.toUpperCase()
+  ) {
+    return -1;
+  } else if (
+    (a === a.toLowerCase() && b === b.toLowerCase()) ||
+    (a === a.toUpperCase() && b === b.toUpperCase())
+  ) {
+    return 1;
+  } else {
+    return 0;
+  }
 }
-
-// TODO: implement calcGrossPrice function
-
-console.log(calcGrossPrice(20, 0.19));
-// result should be 23.8
-
-console.log(calcGrossPrice(40, 0.16));
-// result should be 46.4
-
-/*    Function 03
-========================================================================== */
-
-function addPositive(a, b) {
-  //return a * -1 + b * -1;
-  return Math.abs(a + b);
-}
-
-// TODO: Implement the addPositive function
-
-console.log(addPositive(2, 3));
-// result1 should be 5
-
-console.log(addPositive(3, -5));
-// result2 should be 8
-
-console.log(addPositive(-1, -8));
-// result2 should be 9
